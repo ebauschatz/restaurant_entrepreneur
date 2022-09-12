@@ -13,9 +13,9 @@ class Logger:
         log_file = open('log.txt', 'a')
         log_file.write(f'''\n[{current_local_time}] - Transaction #{self.transaction_count}
         Order Type: {order.dish_name.title()}
-        Order Price: {order.price}
+        Order Price: ${order.price}
         Franchise Number: {franchise_number}
-        Running Daily Sales Total: {self.daily_sales}''')
+        Running Daily Sales Total: ${self.daily_sales}''')
         log_file.close()
 
     def initialize_daily_log(self):

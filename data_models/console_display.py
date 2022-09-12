@@ -1,7 +1,9 @@
+import os
+
 class ConsoleDisplay:
     @staticmethod
     def display_franchise_welcome(franchise_number):
-        print(f'\nWelcome to the restaurant! This is franchise number {franchise_number}')
+        print(f'\nWelcome to the Restaurant At the End of the World! This is franchise number {franchise_number}')
 
     @staticmethod
     def get_valid_user_order_type(order_options):
@@ -22,7 +24,7 @@ class ConsoleDisplay:
 
     @staticmethod
     def display_order_options(options):
-        print('\nBelow are the current menu options:')
+        print('Below are the current menu options:')
         for key, option_tuple in options.items():
             print(f'{key} - {option_tuple[1].title()}')
 

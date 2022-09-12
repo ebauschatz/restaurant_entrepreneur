@@ -1,11 +1,31 @@
 Transaction Log for 09/12/22
-[13:43:06] - Transaction #1
+[14:00:27] - Transaction #1
         Order Type: Salmon
-        Order Price: 17
+        Order Price: $17
         Franchise Number: 1
-        Running Daily Sales Total: 17
-[13:43:11] - Transaction #2
+        Running Daily Sales Total: $17
+[14:00:36] - Transaction #2
+        Order Type: Spaghetti
+        Order Price: $11
+        Franchise Number: 3
+        Running Daily Sales Total: $28
+[14:00:37] - Transaction #3
+        Order Type: Salmon
+        Order Price: $17
+        Franchise Number: 1
+        Running Daily Sales Total: $45
+[14:00:38] - Transaction #4
         Order Type: Pizza
-        Order Price: 15
-        Franchise Number: 1
-        Running Daily Sales Total: 32
+        Order Price: $15
+        Franchise Number: 2
+        Running Daily Sales Total: $60
+[14:00:39] - Transaction #5
+        Order Type: Pizza
+        Order Price: $15
+        Franchise Number: 3
+        Running Daily Sales Total: $75
+[14:00:41] - Transaction #6
+        Order Type: Spaghetti
+        Order Price: $11
+        Franchise Number: 2
+        Running Daily Sales Total: $86
