@@ -1,0 +1,11 @@
+Transaction Log for 09/12/22
+[13:43:06] - Transaction #1
+        Order Type: Salmon
+        Order Price: 17
+        Franchise Number: 1
+        Running Daily Sales Total: 17
+[13:43:11] - Transaction #2
+        Order Type: Pizza
+        Order Price: 15
+        Franchise Number: 1
+        Running Daily Sales Total: 32
