@@ -9,12 +9,14 @@ class ConsoleDisplay:
     Public Static Methods:
         display_franchise_welcome(int) -> void
             Displays a welcome message for the chain and the franchise number
-        get_valid_user_order_type(list: str) -> str
-            Takes in a list of order type option strings and returns one selected by the user
-        configure_order_options(list: str) - > dict
-            Converts the list of order type option strings to a dictionary
-        display_order_options(dict) -> void
-            Displays all options from the order type option dictionary
+        display_existing_log_data_found() -> void
+            Displays a message stating existing log data was found and explaining options
+        get_valid_user_input(list: str, str) -> str
+            Takes in a list of option strings and returns one selected by the user
+        configure_options(list: str) - > dict
+            Converts the list of option strings to a dictionary
+        display_options(dict) -> void
+            Displays all options from the option dictionary
         validate_option_input(str, dict) -> tuple
             Validates that the user selection is part of the dictionary of options
             If it is, it will return (True, option), else (False, None)
@@ -29,36 +31,45 @@ class ConsoleDisplay:
         print(f'\nWelcome to the Restaurant At the End of the World! This is franchise number {franchise_number}')
 
     @staticmethod
-    def get_valid_user_order_type(order_options):
-        """Takes in a list of order type option strings and returns one selected by the user
+    def display_existing_log_data_found():
+        """Displays a message if there is existing log data present
+
+        Effects:
+            Displays a message to the console
+        """
+        print('''\nExisting log data has been found for this application.\nYou can either resume logging in the same file or clear the file and restart logging.''')
+
+    @staticmethod
+    def get_valid_user_input(all_options, input_text):
+        """Takes in a list of option strings and returns one selected by the user
 
         Args:
-            order_options: str
-                a list of string representing the available order types
-                these types will also appear in the OrderFactory class
+            all_options: str
+                a list of string representing the available options
+            input_text: str
+                the text to display when prompting the user for their input
 
         Effects:
             Will prompt user to enter the option to select via console input until they make a valid selection
 
         Returns:
-            A string representing the value from the order options chosen by the user
+            A string representing the value from the options chosen by the user
         """
-        options = ConsoleDisplay.configure_order_options(order_options)
-        ConsoleDisplay.display_order_options(options)
+        options = ConsoleDisplay.configure_options(all_options)
+        ConsoleDisplay.display_options(options)
         validated_input = (False, None)
         while validated_input[0] is False:
-            user_input = input('To place an order, please enter the number of your menu selection: ')
+            user_input = input(input_text)
             validated_input = ConsoleDisplay.validate_option_input(user_input, options)
         return validated_input[1]
 
     @staticmethod
-    def configure_order_options(order_options):
+    def configure_options(all_options):
         """Converts a list of strings to a dictionary
 
         Args:
-            order_options: list(str)
-                a list of strings representing the avaialble order options
-                these options will also appear in the OrderFactory class
+            all_options: list(str)
+                a list of strings representing the avaialble options
 
         Returns:
             A dictionary created from the list:
@@ -66,24 +77,24 @@ class ConsoleDisplay:
                 value - a tuple containing True and the value of the list element
         """
         options = {}
-        for index, option in enumerate(order_options):
+        for index, option in enumerate(all_options):
             options[str(index + 1)] = (True, option)
         return options
 
     @staticmethod
-    def display_order_options(options):
-        """Displays all available order type options
+    def display_options(options):
+        """Displays all available options
 
         Args:
             options: dict
-                A dictionary representing all available order options
+                A dictionary representing all available options
                     key - the option number
                     value - a tuple containing True and the option value (str)
 
         Effects:
             Prints all available option keys and option string values to the console
         """
-        print('Below are the current menu options:')
+        print('Below are the current options:')
         for key, option_tuple in options.items():
             print(f'{key} - {option_tuple[1].title()}')
 
