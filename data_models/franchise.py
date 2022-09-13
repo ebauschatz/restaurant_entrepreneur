@@ -36,6 +36,6 @@ class Franchise:
             Logs the user's order to the shared log file
         """
         ConsoleDisplay.display_franchise_welcome(self.location_number)
-        order_type = ConsoleDisplay.get_valid_user_order_type(['pizza', 'salmon', 'spaghetti'])
+        order_type = ConsoleDisplay.get_valid_user_input(['pizza', 'salmon', 'spaghetti'], 'To place an order, please enter the number of your menu selection: ')
         new_order = OrderFactory.create_order(order_type)
         transaction_log.log_transaction(new_order, self.location_number)

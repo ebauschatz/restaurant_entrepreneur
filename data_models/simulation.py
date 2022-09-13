@@ -18,7 +18,7 @@ class Simulation:
         Effects:
             Creates franchise instances and places multiple orders at each
         """
-        transaction_log.initialize_daily_log()
+        transaction_log.determine_log_mode()
         
         franchise_one = Franchise(1)
         franchise_two = Franchise(2)
@@ -30,3 +30,5 @@ class Simulation:
         franchise_two.place_order()
         franchise_three.place_order()
         franchise_two.place_order()
+
+        transaction_log.record_application_finished()
